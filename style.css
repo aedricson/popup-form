@@ -1,0 +1,13 @@
+.wrap {
+  margin: 80px auto 0;
+  max-width: 600px;
+}
+
+.form-field {
+  transform: translateX(-200%);
+  transition: all 0.3s;
+}
+
+.error {
+  visibility: hidden;
+}

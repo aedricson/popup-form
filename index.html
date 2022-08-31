@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="app.js" defer></script>
+    <title>Form</title>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="buttons has-addons is-centered" id="open-form">
+        <button class="button is-primary">Open form</button>
+      </div>
+
+      <form class="form-field" id="form">
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              class="input"
+              id="user-name"
+              type="text"
+              placeholder="Username"
+              required
+            >
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </div>
+          <p class="help is-danger error" id="username-error">Value must be more than 2 symbols</p>
+        </div>
+        
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              class="input"
+              id="user-email"
+              type="email"
+              placeholder="Email"
+              required
+            >
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-exclamation-triangle"></i>
+            </span>
+          </div>
+          <p class="help is-danger error" id="email-error">Value must be more than 2 symbols</p>
+        </div>
+    
+        <div class="field">
+          <label class="label">Phone</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              class="input"
+              id="user-phone"
+              type="tel"
+              placeholder="Phone number"
+              required
+            >
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </div>
+          <p class="help is-danger error" id="phone-error">Value must be more than 2 symbols</p>
+        </div>
+        
+        <div class="field">
+          <div class="control">
+            <label class="checkbox">
+              <input type="checkbox" required>
+              I agree to the <a href="#">terms and conditions</a>
+            </label>
+          </div>
+        </div>
+        
+        <div class="field is-grouped">
+          <div class="control">
+            <button
+              type="submit"
+              class="button is-link"
+              id="submit-form"
+            >
+              Submit
+            </button>
+          </div>
+    
+          <div class="control" id="close-form">
+            <button class="button is-link is-light" type="button">Close</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
