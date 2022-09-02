@@ -16,92 +16,116 @@
         <button class="button is-primary">Open form</button>
       </div>
 
-      <form class="form-field" id="form">
-        <div class="field">
-          <label class="label">Username</label>
-          <div class="control has-icons-left has-icons-right">
-            <input
-              class="input"
-              id="user-name"
-              type="text"
-              placeholder="Username"
-              required
-            >
-            <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-            </span>
-            <span class="icon is-small is-right">
-              <i class="fas fa-check"></i>
-            </span>
-          </div>
-          <p class="help is-danger error" id="username-error">Value must be more than 2 symbols</p>
+      <div class="modal" id="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Modal title</p>
+            <button class="delete" id="close-modal" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            Form submitted successfully
+          </section>
         </div>
-        
-        <div class="field">
-          <label class="label">Email</label>
-          <div class="control has-icons-left has-icons-right">
-            <input
-              class="input"
-              id="user-email"
-              type="email"
-              placeholder="Email"
-              required
-            >
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-              <i class="fas fa-exclamation-triangle"></i>
-            </span>
-          </div>
-          <p class="help is-danger error" id="email-error">Value must be more than 2 symbols</p>
+      </div>
+
+      <div class="modal" id="main-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Please, fill the form</p>
+            <button class="delete" id="close-main-modal" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <form class="form-field" id="form">
+              <div class="field">
+                <label class="label">Username</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input
+                    class="input"
+                    id="user-name"
+                    type="text"
+                    placeholder="Username"
+                    required
+                  >
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                  </span>
+                </div>
+                <p class="help is-danger error" id="username-error">Value must be more than 2 symbols</p>
+              </div>
+              
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input
+                    class="input"
+                    id="user-email"
+                    type="email"
+                    placeholder="Email"
+                    required
+                  >
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </span>
+                </div>
+                <p class="help is-danger error" id="email-error">Value must be more than 2 symbols</p>
+              </div>
+          
+              <div class="field">
+                <label class="label">Phone</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input
+                    class="input"
+                    id="user-phone"
+                    type="tel"
+                    placeholder="Phone number"
+                    required
+                  >
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                  </span>
+                </div>
+                <p class="help is-danger error" id="phone-error">Value must be more than 2 symbols</p>
+              </div>
+              
+              <div class="field">
+                <div class="control">
+                  <label class="checkbox">
+                    <input type="checkbox" required>
+                    I agree to the <a href="#">terms and conditions</a>
+                  </label>
+                </div>
+              </div>
+              
+              <div class="field is-grouped">
+                <div class="control">
+                  <button
+                    type="submit"
+                    class="button is-link"
+                    id="submit-form"
+                  >
+                    Submit
+                  </button>
+                </div>
+          
+                <div class="control" id="close-form">
+                  <button class="button is-link is-light" type="button">Close</button>
+                </div>
+              </div>
+            </form>
+          </section>
         </div>
-    
-        <div class="field">
-          <label class="label">Phone</label>
-          <div class="control has-icons-left has-icons-right">
-            <input
-              class="input"
-              id="user-phone"
-              type="tel"
-              placeholder="Phone number"
-              required
-            >
-            <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-            </span>
-            <span class="icon is-small is-right">
-              <i class="fas fa-check"></i>
-            </span>
-          </div>
-          <p class="help is-danger error" id="phone-error">Value must be more than 2 symbols</p>
-        </div>
-        
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-              <input type="checkbox" required>
-              I agree to the <a href="#">terms and conditions</a>
-            </label>
-          </div>
-        </div>
-        
-        <div class="field is-grouped">
-          <div class="control">
-            <button
-              type="submit"
-              class="button is-link"
-              id="submit-form"
-            >
-              Submit
-            </button>
-          </div>
-    
-          <div class="control" id="close-form">
-            <button class="button is-link is-light" type="button">Close</button>
-          </div>
-        </div>
-      </form>
+      </div>
     </div>
   </body>
 </html>

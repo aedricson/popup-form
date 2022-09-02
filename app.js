@@ -4,6 +4,12 @@ const form = document.getElementById('form');
 const openForm = document.getElementById('open-form');
 const closeForm = document.getElementById('close-form');
 
+const openMainModal = document.getElementById('main-modal');
+const closeMainModal = document.getElementById('close-main-modal');
+
+const openModal = document.getElementById('modal');
+const closeModal = document.getElementById('close-modal');
+
 const userNameInput = document.getElementById('user-name');
 const userEmailInput = document.getElementById('user-email');
 const userPhoneInput = document.getElementById('user-phone');
@@ -13,48 +19,58 @@ const userEmailError = document.getElementById('email-error');
 const userPhoneError = document.getElementById('phone-error');
 
 openForm.addEventListener('click', () => {
-  form.style.transform = 'translateX(0)';
+  openMainModal.className = 'is-active';
   openForm.style.visibility = 'hidden';
 });
 
+closeMainModal.addEventListener('click', () => {
+  openMainModal.className = 'modal';
+  openForm.style.visibility = 'visible';
+});
+
+closeModal.addEventListener('click', () => {
+  openModal.className = 'modal';
+});
+
 closeForm.addEventListener('click', () => {
-  form.style.transform = 'translateX(-200%)';
+  openMainModal.className = 'modal';
   openForm.style.visibility = 'visible';
 });
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  if (userNameInput.value.length <= 2) {
-    userNameError.style.visibility = 'visible';
+  const formValues = [
+    {
+      'value': userNameInput.value,
+      'error': userNameError,
+    },
+    {
+      'value': userEmailInput.value,
+      'error': userEmailError,
+    },
+    {
+      'value': userPhoneInput.value,
+      'error': userPhoneError,
+    }
+  ];
 
-    return;
+  for (const formValue of formValues) {
+    if (formValue.value.length <= 2) {
+      formValue.error.style.visibility = 'visible';
+
+      return;
+    }
+    
+    formValue.error.style.visibility = 'hidden';
   }
-
-  userNameError.style.visibility = 'hidden';
-
-  if (userEmailInput.value.length <= 2) {
-    userEmailError.style.visibility = 'visible';
-
-    return;
-  }
-
-  userEmailError.style.visibility = 'hidden';
-
-  if (userPhoneInput.value.length <= 2) {
-    userPhoneError.style.visibility = 'visible';
-
-    return;
-  }
-
-  userPhoneError.style.visibility = 'hidden';
 
   userNameInput.value = '';
   userEmailInput.value = '';
   userPhoneInput.value = '';
 
-  form.style.transform = 'translateX(-200%)';
+  openMainModal.className = 'modal';
   openForm.style.visibility = 'visible';
 
-  alert('Form submitted successfully');
+  openModal.className = 'is-active';
 });
